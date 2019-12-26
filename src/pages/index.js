@@ -1,7 +1,8 @@
 import React from 'react'
+import { hot } from 'react-hot-loader/root'
 import { Header, Page } from '../components'
 
-function Home(props) {
+function Pages(props) {
   return (
     <Page title='Home' palette='graphics'>
       <Header />
@@ -9,4 +10,4 @@ function Home(props) {
   )
 }
 
-export default Home
+export default hot(Pages)

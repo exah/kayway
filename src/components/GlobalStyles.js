@@ -20,7 +20,7 @@ export const GlobalStyles = () => {
 
         html,
         body,
-        #__next {
+        #app {
           height: 100%;
         }
       `}

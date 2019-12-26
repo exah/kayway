@@ -1,11 +1,11 @@
 import React from 'react'
-import Head from 'next/head'
+import { Helmet } from 'react-helmet-async'
 
 export const RobotoMonoFont = () => (
-  <Head>
+  <Helmet>
     <link
       href='https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=cyrillic'
       rel='stylesheet'
     />
-  </Head>
+  </Helmet>
 )
