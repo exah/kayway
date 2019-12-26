@@ -1,4 +1,10 @@
+export * from 'pss-components'
+
 export * from './GlobalStyles'
+export * from './Header'
+export * from './Logo'
+export * from './Nav'
+export * from './NavLink'
 export * from './Page'
 export * from './RobotoMonoFont'
 export * from './Theme'

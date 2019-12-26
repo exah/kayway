@@ -1,8 +1,12 @@
 import React from 'react'
-import { Page } from '../components'
+import { Header, Page } from '../components'
 
-function Home() {
-  return <Page title='Home'>Home</Page>
+function Home(props) {
+  return (
+    <Page title='Home' palette='graphics'>
+      <Header />
+    </Page>
+  )
 }
 
 export default Home

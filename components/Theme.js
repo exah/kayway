@@ -31,27 +31,40 @@ const fontFamily = {
   monospace: `'Roboto Mono', monospace`,
 }
 
-const space = [0, gap / 2, gap, gap * 2]
+const space = [0, gap / 2, gap, gap * 1.5, gap * 2, gap * 3]
 
 const color = {
   white: '#ffffff',
   black: '#000000',
+  grey00: '#f1f1f1',
+  pink00: '#fff4f4',
+  pink10: '#fe5979',
 }
 
 const palette = {
-  light: {
+  contacts: {
     fg: color.black,
     bg: color.white,
+    header: color.black,
+    page: color.white,
   },
-  dark: {
-    fg: color.white,
-    bg: color.black,
+  graphics: {
+    fg: color.black,
+    bg: color.white,
+    header: color.black,
+    page: color.grey00,
+  },
+  illustrations: {
+    fg: color.black,
+    bg: color.white,
+    header: color.pink10,
+    page: color.pink00,
   },
 }
 
 const theme = {
   default: {
-    palette: 'light',
+    palette: 'graphics',
   },
   breakpoint,
   media,
