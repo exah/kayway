@@ -7,9 +7,63 @@
     "build": "next build",
     "start": "next start"
   },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "printWidth": 80
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-react",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": 2,
+      "no-shadow": 2,
+      "react/jsx-pascal-case": 0,
+      "react/prop-types": [
+        2,
+        {
+          "ignore": [
+            "children"
+          ]
+        }
+      ]
+    }
+  },
   "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "9.1.6",
+    "prop-types": "^15.7.2",
+    "pss": "^5.0.1",
+    "pss-components": "^5.0.1",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "ya-fetch": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.18.2"
   }
 }
