@@ -6,12 +6,11 @@ import { GlobalStyles } from './GlobalStyles'
 import { Providers } from './Providers'
 import { RobotoMonoFont } from './RobotoMonoFont'
 
-export const Page = ({ title, palette, ...rest }) => (
+export const Page = ({ palette, ...rest }) => (
   <Providers>
     <Helmet>
       <meta charset='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>{title}</title>
     </Helmet>
     <RobotoMonoFont />
     <GlobalStyles />
@@ -22,7 +21,6 @@ export const Page = ({ title, palette, ...rest }) => (
 )
 
 Page.propTypes = {
-  title: PropTypes.string.isRequired,
   palette: PropTypes.string.isRequired,
   children: PropTypes.node,
 }

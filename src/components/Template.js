@@ -15,7 +15,8 @@ export const Template = ({ head, data, files, children }) => (
     </head>
     <body {...head.bodyAttributes.toComponent()}>
       <div id='app'>{children}</div>
-      <script {...innerHTML(`window._ssr = ${JSON.stringify(data || {})};`)} />
+
+      <script {...innerHTML(`window._ssr = ${JSON.stringify(data)};`)} />
       <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
       {files.js.map((src) => (
         <script key={src} async src={src} />

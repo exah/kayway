@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { ThemeProvider } from 'pss-components'
+import { PALETTES } from '../constants'
 
 const gap = 16
 const base = 16
@@ -42,19 +43,19 @@ const color = {
 }
 
 const palette = {
-  contacts: {
+  [PALETTES.CONTACTS]: {
     fg: color.black,
     bg: color.white,
     header: color.black,
     page: color.white,
   },
-  graphics: {
+  [PALETTES.GRAPHICS]: {
     fg: color.black,
     bg: color.white,
     header: color.black,
     page: color.grey00,
   },
-  illustrations: {
+  [PALETTES.ILLUSTRATIONS]: {
     fg: color.black,
     bg: color.white,
     header: color.pink10,
@@ -64,7 +65,7 @@ const palette = {
 
 const theme = {
   default: {
-    palette: 'graphics',
+    palette: PALETTES.GRAPHICS,
   },
   breakpoint,
   media,
