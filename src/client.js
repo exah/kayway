@@ -6,7 +6,7 @@ import { DataProvider, createDataStore } from 'react-universal-data'
 import Pages from './pages'
 
 ReactDOM.hydrate(
-  <DataProvider value={createDataStore(window._ssr.preloaded)}>
+  <DataProvider value={createDataStore(window._ssr.data)}>
     <HelmetProvider>
       <BrowserRouter>
         <Pages />

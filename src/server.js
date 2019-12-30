@@ -8,9 +8,9 @@ import { Template } from './components'
 import Pages from './pages'
 
 function serverRender(stats) {
-  return (req, res, next) => {
-    const userLang = req.language || config.languages[0]
-    const context = { status: 200, statusText: 'OK' }
+  return async (req, res, next) => {
+    const lang = req.language || config.languages[0]
+    const context = { status: 200, url: null }
 
     const appElement = (
       <StaticRouter location={req.url} context={context}>
@@ -20,35 +20,36 @@ function serverRender(stats) {
       </StaticRouter>
     )
 
-    return getInitialData(appElement)
-      .then((preloaded) => {
-        const html = renderToString(
-          <Template
-            head={context.helmet}
-            data={{ config: config.public, preloaded, userLang }}
-            files={stats.files}
-          >
-            {appElement}
-          </Template>
-        )
+    try {
+      const data = await getInitialData(appElement)
+      const html = renderToString(
+        <Template
+          head={context.helmet}
+          files={stats.files}
+          config={config.public}
+          data={data}
+          lang={lang}
+        >
+          {appElement}
+        </Template>
+      )
 
-        if (context.url) {
-          res.redirect(302, context.url)
-          console.log(`Redirecting... '${req.path}' -> '${context.url}'`)
-        } else {
-          res.status(200)
-          res.write('<!DOCTYPE html>')
-          res.write(html)
-          res.end()
-        }
-      })
-      .catch((error) => {
-        console.log('Prefetch failed')
-        console.error(error)
+      if (context.url) {
+        res.redirect(302, context.url)
+        console.log(`Redirecting... '${req.path}' -> '${context.url}'`)
+      } else {
+        res.status(context.status)
+        res.write('<!DOCTYPE html>')
+        res.write(html)
+        res.end()
+      }
+    } catch (error) {
+      console.log('Render failed')
+      console.error(error)
 
-        res.status(error.status || 500)
-        next(error)
-      })
+      res.status(error.status || context.status || 500)
+      next(error)
+    }
   }
 }
 
