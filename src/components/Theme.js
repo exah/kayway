@@ -46,20 +46,14 @@ const palette = {
   [PALETTES.CONTACTS]: {
     fg: color.black,
     bg: color.white,
-    header: color.black,
-    page: color.white,
   },
   [PALETTES.GRAPHICS]: {
     fg: color.black,
     bg: color.white,
-    header: color.black,
-    page: color.grey00,
   },
   [PALETTES.ILLUSTRATIONS]: {
-    fg: color.black,
+    fg: color.pink10,
     bg: color.white,
-    header: color.pink10,
-    page: color.pink00,
   },
 }
 

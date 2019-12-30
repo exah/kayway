@@ -5,7 +5,7 @@ import { Logo } from './Logo'
 import { Nav } from './Nav'
 
 export const Header = (props) => (
-  <Box fg='header' bg='auto' {...props}>
+  <Box tm='auto' transition='all 0.3s' {...props}>
     <Flex>
       <Link as={RouterLink} to='/' mx='auto' pt={2}>
         <Logo mr='-20px' />

@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet-async'
-import { Box, ThemeDefaults } from 'pss-components'
+import { Layout, ThemeDefaults } from 'pss-components'
 import { GlobalStyles } from './GlobalStyles'
 import { Providers } from './Providers'
 import { RobotoMonoFont } from './RobotoMonoFont'
+import { Header } from './Header'
 
-export const Page = ({ palette, ...rest }) => (
+export const Page = ({ palette, children, ...rest }) => (
   <Providers>
     <Helmet>
       <meta charset='utf-8' />
@@ -15,7 +16,10 @@ export const Page = ({ palette, ...rest }) => (
     <RobotoMonoFont />
     <GlobalStyles />
     <ThemeDefaults palette={palette}>
-      <Box minHeight='100%' bg='page' {...rest} />
+      <Layout flexDirection='column' minHeight='100%' {...rest}>
+        <Header />
+        {children}
+      </Layout>
     </ThemeDefaults>
   </Providers>
 )
