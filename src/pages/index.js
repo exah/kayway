@@ -2,7 +2,7 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Switch, Route, Redirect } from 'react-router'
 import { ROUTES, PALETTES } from '../constants'
-import { Page, ScrollSnap } from '../components'
+import { Page, ScrollSnap, ScrollSnapRoute } from '../components'
 
 import IllustrationsPage from './illustrations'
 import GraphicsPage from './graphics'
@@ -22,24 +22,21 @@ function Pages(props) {
         render={(route) => (
           <Page palette={ROUTE_PALETTES[route.match.path]}>
             <ScrollSnap flex='1 1 auto' width='100wv'>
-              <ScrollSnap.Item
-                active={route.match.path === ROUTES.CONTACTS}
+              <ScrollSnapRoute
+                path={ROUTES.CONTACTS}
+                as={ContactsPage}
                 bg='white'
-              >
-                <ContactsPage />
-              </ScrollSnap.Item>
-              <ScrollSnap.Item
-                active={route.match.path === ROUTES.GRAPHICS}
+              />
+              <ScrollSnapRoute
+                path={ROUTES.GRAPHICS}
+                as={GraphicsPage}
                 bg='grey00'
-              >
-                <GraphicsPage />
-              </ScrollSnap.Item>
-              <ScrollSnap.Item
-                active={route.match.path === ROUTES.ILLUSTRATIONS}
+              />
+              <ScrollSnapRoute
+                path={ROUTES.ILLUSTRATIONS}
+                as={IllustrationsPage}
                 bg='pink00'
-              >
-                <IllustrationsPage />
-              </ScrollSnap.Item>
+              />
             </ScrollSnap>
           </Page>
         )}
