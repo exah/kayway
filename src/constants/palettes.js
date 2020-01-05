@@ -1,2 +1,2 @@
 export const DEFAULT = 'default'
-export const ILLUSTRATIONS = 'illustrations'
+export const VECTORS = 'vector'

@@ -47,7 +47,7 @@ const palette = {
     fg: color.black,
     bg: color.white,
   },
-  [PALETTES.ILLUSTRATIONS]: {
+  [PALETTES.VECTORS]: {
     fg: color.pink10,
     bg: color.white,
   },

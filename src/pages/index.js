@@ -19,12 +19,12 @@ function Pages(props) {
   return (
     <Switch>
       <Route
-        path={[ROUTES.ILLUSTRATIONS, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
+        path={[ROUTES.VECTORS, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
         render={(route) => (
           <Page
             palette={
-              route.match.path === ROUTES.ILLUSTRATIONS
-                ? PALETTES.ILLUSTRATIONS
+              route.match.path === ROUTES.VECTORS
+                ? PALETTES.VECTORS
                 : PALETTES.DEFAULT
             }
           >
@@ -32,7 +32,7 @@ function Pages(props) {
               <Nav>
                 <RouteLink to={ROUTES.CONTACTS}>Контакты</RouteLink>
                 <RouteLink to={ROUTES.GRAPHICS}>Графика</RouteLink>
-                <RouteLink to={ROUTES.ILLUSTRATIONS}>Вектор</RouteLink>
+                <RouteLink to={ROUTES.VECTORS}>Вектор</RouteLink>
               </Nav>
             </Header>
             <ScrollSnap flex='1 1 auto' width='100wv'>
@@ -47,7 +47,7 @@ function Pages(props) {
                 bg='grey00'
               />
               <ScrollSnapRoute
-                path={ROUTES.ILLUSTRATIONS}
+                path={ROUTES.VECTORS}
                 as={IllustrationsPage}
                 bg='pink00'
               />
