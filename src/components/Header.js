@@ -1,26 +1,16 @@
 import React from 'react'
-import { Flex, Box, Link } from 'pss-components'
-import { Link as RouterLink } from 'react-router-dom'
+import { Flex, Box } from 'pss-components'
+import { ROUTES } from '../constants'
 import { Logo } from './Logo'
-import { Nav } from './Nav'
+import { RouteLink } from './RouteLink'
 
-export const Header = (props) => (
-  <Box tm='auto' transition='all 0.3s' {...props}>
+export const Header = ({ children, ...rest }) => (
+  <Box tm='auto' transition='color 0.3s' {...rest}>
     <Flex>
-      <Link as={RouterLink} to='/' mx='auto' pt={2}>
+      <RouteLink to={ROUTES.HOME} mx='auto' pt={2}>
         <Logo mr='-20px' />
-      </Link>
+      </RouteLink>
     </Flex>
-    <Nav>
-      <Link as={RouterLink} to='/contacts'>
-        Контакты
-      </Link>
-      <Link as={RouterLink} to='/graphics'>
-        Графика
-      </Link>
-      <Link as={RouterLink} to='/illustrations'>
-        Вектор
-      </Link>
-    </Nav>
+    {children}
   </Box>
 )

@@ -5,7 +5,6 @@ import { Layout, ThemeDefaults } from 'pss-components'
 import { GlobalStyles } from './GlobalStyles'
 import { Providers } from './Providers'
 import { RobotoMonoFont } from './RobotoMonoFont'
-import { Header } from './Header'
 
 export const Page = ({ palette, children, ...rest }) => (
   <Providers>
@@ -17,7 +16,6 @@ export const Page = ({ palette, children, ...rest }) => (
     <GlobalStyles />
     <ThemeDefaults palette={palette}>
       <Layout flexDirection='column' minHeight='100%' {...rest}>
-        <Header />
         {children}
       </Layout>
     </ThemeDefaults>
