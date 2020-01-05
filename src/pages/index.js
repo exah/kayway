@@ -15,19 +15,19 @@ import IllustrationsPage from './illustrations'
 import GraphicsPage from './graphics'
 import ContactsPage from './contacts'
 
-const ROUTE_PALETTES = {
-  [ROUTES.ILLUSTRATIONS]: PALETTES.ILLUSTRATIONS,
-  [ROUTES.GRAPHICS]: PALETTES.GRAPHICS,
-  [ROUTES.CONTACTS]: PALETTES.CONTACTS,
-}
-
 function Pages(props) {
   return (
     <Switch>
       <Route
         path={[ROUTES.ILLUSTRATIONS, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
         render={(route) => (
-          <Page palette={ROUTE_PALETTES[route.match.path]}>
+          <Page
+            palette={
+              route.match.path === ROUTES.ILLUSTRATIONS
+                ? PALETTES.ILLUSTRATIONS
+                : PALETTES.DEFAULT
+            }
+          >
             <Header>
               <Nav>
                 <RouteLink to={ROUTES.CONTACTS}>Контакты</RouteLink>

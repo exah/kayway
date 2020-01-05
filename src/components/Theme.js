@@ -43,11 +43,7 @@ const color = {
 }
 
 const palette = {
-  [PALETTES.CONTACTS]: {
-    fg: color.black,
-    bg: color.white,
-  },
-  [PALETTES.GRAPHICS]: {
+  [PALETTES.DEFAULT]: {
     fg: color.black,
     bg: color.white,
   },
@@ -58,9 +54,6 @@ const palette = {
 }
 
 const theme = {
-  default: {
-    palette: PALETTES.GRAPHICS,
-  },
   breakpoint,
   media,
   space,

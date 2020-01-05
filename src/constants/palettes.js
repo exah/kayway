@@ -1,3 +1,2 @@
-export const CONTACTS = 'contacts'
-export const GRAPHICS = 'graphics'
+export const DEFAULT = 'default'
 export const ILLUSTRATIONS = 'illustrations'
