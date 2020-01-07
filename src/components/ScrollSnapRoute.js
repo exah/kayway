@@ -34,6 +34,7 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
         elementRect.right === parentRect.right
       ) {
         history.push(path)
+        window.scroll({ top: 0 })
       }
     }
 
