@@ -36,6 +36,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@exah/webpack-universal-hot-middleware": "^1.1.0",
+    "animejs": "^3.1.0",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "config": "^3.2.4",
@@ -51,6 +52,7 @@
     "react-hot-loader": "^4.12.18",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
+    "react-transition-group": "^4.3.0",
     "react-universal-data": "^3.0.0",
     "ya-fetch": "^1.1.0"
   },

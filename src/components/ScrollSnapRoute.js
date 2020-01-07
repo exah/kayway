@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useRouteMatch, useHistory } from 'react-router'
 import { ScrollSnapItem } from './ScrollSnap'
+import { Transition } from './Transition'
 
 const on = (target, ...args) => {
   target.addEventListener(...args)
@@ -74,7 +75,13 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
       style={{ display: isHiddenOnMount ? 'none' : '' }}
       {...rest}
     >
-      {isMatched && <Comp />}
+      <Transition
+        in={isMatched}
+        enter={{ opacity: [0, 1] }}
+        exit={{ opacity: [1, 0] }}
+      >
+        <Comp />
+      </Transition>
     </ScrollSnapItem>
   )
 }
