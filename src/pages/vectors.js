@@ -3,19 +3,19 @@ import PropTypes from 'prop-types'
 import { withPage, randomBetween } from '../utils'
 import { Box, Feed } from '../components'
 
-const GraphicsPage = ({ items = [] }) => (
+const VectorsPage = ({ items = [] }) => (
   <Box p={5}>
     <Feed space={5} grid={12} column={{ all: 6, sm: 12 }}>
       {items.map((item, index) => (
         <Feed.Item key={index}>
-          <Box ratio={item.ratio} bg='white' />
+          <Box ratio={item.ratio} bg='pink05' />
         </Feed.Item>
       ))}
     </Feed>
   </Box>
 )
 
-GraphicsPage.propTypes = {
+VectorsPage.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       ratio: PropTypes.number,
@@ -23,7 +23,7 @@ GraphicsPage.propTypes = {
   ),
 }
 
-GraphicsPage.getData = async () => {
+VectorsPage.getData = async () => {
   const items = Array.from({ length: 10 }, () => ({
     ratio: randomBetween(9 / 16, 16 / 9),
   }))
@@ -31,4 +31,4 @@ GraphicsPage.getData = async () => {
   return { items }
 }
 
-export default withPage(GraphicsPage)
+export default withPage(VectorsPage)

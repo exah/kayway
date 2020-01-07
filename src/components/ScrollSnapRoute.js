@@ -41,20 +41,30 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
 
   useEffect(() => {
     const element = elementRef.current
+    const parent = element.parentNode
     const prevMatched = prevMatchedRef.current
 
     element.style.display = ''
     prevMatchedRef.current = isMatched
 
     if (isMatched) {
+      const scrollIntoView = (options) =>
+        parent.scroll({ left: element.offsetLeft, ...options })
+
       switch (prevMatched) {
         // on mount
-        case undefined:
-          return element.scrollIntoView()
+        case undefined: {
+          scrollIntoView()
+          break
+        }
         // on update
-        case false:
-          return element.scrollIntoView({ behavior: 'smooth' })
+        case false: {
+          scrollIntoView({ behavior: 'smooth' })
+          break
+        }
       }
+
+      return on(window, 'resize', () => scrollIntoView(), { passive: true })
     }
   }, [elementRef, prevMatchedRef, isMatched])
 

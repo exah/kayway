@@ -11,7 +11,7 @@ import {
   RouteLink,
 } from '../components'
 
-import IllustrationsPage from './illustrations'
+import VectorsPage from './vectors'
 import GraphicsPage from './graphics'
 import ContactsPage from './contacts'
 
@@ -48,7 +48,7 @@ function Pages(props) {
               />
               <ScrollSnapRoute
                 path={ROUTES.VECTORS}
-                as={IllustrationsPage}
+                as={VectorsPage}
                 bg='pink00'
               />
             </ScrollSnap>

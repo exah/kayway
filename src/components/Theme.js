@@ -39,6 +39,7 @@ const color = {
   black: '#000000',
   grey00: '#f1f1f1',
   pink00: '#fff4f4',
+  pink05: '#ff8099',
   pink10: '#fe5979',
 }
 
