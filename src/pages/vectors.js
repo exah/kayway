@@ -1,34 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withPage, randomBetween } from '../utils'
-import { Box, Feed } from '../components'
+import { fetchPage } from '../api'
+import { CONTENTFUL } from '../constants'
+import { projectPropType } from '../prop-types'
+import { ProjectFeed } from '../components'
+import { withPage } from '../utils'
 
-const VectorsPage = ({ items = [] }) => (
-  <Box p={5}>
-    <Feed space={5} grid={6} column={{ all: 6, sm: 3 }}>
-      {items.map((item, index) => (
-        <Feed.Item key={index}>
-          <Box ratio={item.ratio} bg='pink05' />
-        </Feed.Item>
-      ))}
-    </Feed>
-  </Box>
+const VectorsPage = ({ projects = [] }) => (
+  <ProjectFeed projects={projects} bg='pink05' />
 )
 
 VectorsPage.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      ratio: PropTypes.number,
-    })
-  ),
+  projects: PropTypes.arrayOf(projectPropType),
 }
 
 VectorsPage.getData = async () => {
-  const items = Array.from({ length: 10 }, () => ({
-    ratio: randomBetween(9 / 16, 16 / 9),
-  }))
+  const page = await fetchPage(CONTENTFUL.PAGE_SLUGS.VECTORS)
 
-  return { items }
+  return {
+    title: page.title,
+    projects: page.projects,
+  }
 }
 
 export default withPage(VectorsPage)

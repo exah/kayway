@@ -1,10 +1,12 @@
 export * from 'pss-components'
 
+export * from './AssetImage'
 export * from './GlobalStyles'
 export * from './Header'
 export * from './Logo'
 export * from './Nav'
 export * from './Page'
+export * from './ProjectFeed'
 export * from './RobotoMonoFont'
 export * from './RouteLink'
 export * from './ScrollSnap'

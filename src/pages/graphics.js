@@ -1,34 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withPage, randomBetween } from '../utils'
-import { Box, Feed } from '../components'
+import { fetchPage } from '../api'
+import { CONTENTFUL } from '../constants'
+import { projectPropType } from '../prop-types'
+import { ProjectFeed } from '../components'
+import { withPage } from '../utils'
 
-const GraphicsPage = ({ items = [] }) => (
-  <Box p={5}>
-    <Feed space={5} grid={6} column={{ all: 6, sm: 3 }}>
-      {items.map((item, index) => (
-        <Feed.Item key={index}>
-          <Box ratio={item.ratio} bg='white' />
-        </Feed.Item>
-      ))}
-    </Feed>
-  </Box>
+const GraphicsPage = ({ projects = [] }) => (
+  <ProjectFeed projects={projects} bg='white' />
 )
 
 GraphicsPage.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      ratio: PropTypes.number,
-    })
-  ),
+  projects: PropTypes.arrayOf(projectPropType),
 }
 
 GraphicsPage.getData = async () => {
-  const items = Array.from({ length: 10 }, () => ({
-    ratio: randomBetween(9 / 16, 16 / 9),
-  }))
+  const page = await fetchPage(CONTENTFUL.PAGE_SLUGS.GRAPHICS)
 
-  return { items }
+  return {
+    title: page.title,
+    projects: page.projects,
+  }
 }
 
 export default withPage(GraphicsPage)
