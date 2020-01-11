@@ -5,7 +5,7 @@ import { Box, Feed } from '../components'
 
 const GraphicsPage = ({ items = [] }) => (
   <Box p={5}>
-    <Feed space={5} grid={12} column={{ all: 6, sm: 12 }}>
+    <Feed space={5} grid={6} column={{ all: 6, sm: 3 }}>
       {items.map((item, index) => (
         <Feed.Item key={index}>
           <Box ratio={item.ratio} bg='white' />

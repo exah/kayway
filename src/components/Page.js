@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet-async'
-import { Layout, ThemeDefaults } from 'pss-components'
+import { Layout } from 'pss-components'
 import { GlobalStyles } from './GlobalStyles'
 import { Providers } from './Providers'
 import { RobotoMonoFont } from './RobotoMonoFont'
 
-export const Page = ({ palette, children, ...rest }) => (
+export const Page = (props) => (
   <Providers>
     <Helmet>
       <meta charset='utf-8' />
@@ -14,15 +13,6 @@ export const Page = ({ palette, children, ...rest }) => (
     </Helmet>
     <RobotoMonoFont />
     <GlobalStyles />
-    <ThemeDefaults palette={palette}>
-      <Layout flexDirection='column' minHeight='100%' {...rest}>
-        {children}
-      </Layout>
-    </ThemeDefaults>
+    <Layout flexDirection='column' minHeight='100%' {...props} />
   </Providers>
 )
-
-Page.propTypes = {
-  palette: PropTypes.string.isRequired,
-  children: PropTypes.node,
-}
