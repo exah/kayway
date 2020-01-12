@@ -1,26 +1,30 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet-async'
 import { fetchPage } from '../api'
 import { CONTENTFUL } from '../constants'
-import { projectPropType } from '../prop-types'
-import { ProjectFeed } from '../components'
+import { pagePropType } from '../prop-types'
+import { Box, Projects } from '../components'
 import { withPage } from '../utils'
 
-const VectorsPage = ({ projects = [] }) => (
-  <ProjectFeed projects={projects} bg='pink05' />
+const VectorsPage = ({ page }) => (
+  <Box>
+    {page && (
+      <>
+        <Helmet>
+          <title>{page.title}</title>
+        </Helmet>
+        <Projects value={page.projects} bg='pink05' />
+      </>
+    )}
+  </Box>
 )
 
 VectorsPage.propTypes = {
-  projects: PropTypes.arrayOf(projectPropType),
+  page: pagePropType,
 }
 
-VectorsPage.getData = async () => {
-  const page = await fetchPage(CONTENTFUL.PAGE_SLUGS.VECTORS)
-
-  return {
-    title: page.title,
-    projects: page.projects,
-  }
-}
+VectorsPage.getData = async () => ({
+  page: await fetchPage(CONTENTFUL.PAGES.VECTORS),
+})
 
 export default withPage(VectorsPage)

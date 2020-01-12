@@ -19,7 +19,7 @@ const media = {
   xs: `(max-width: ${breakpoint.mobile}px)`,
   sm: `(min-width: ${breakpoint.mobile + 1}px)`,
   md: `(min-width: ${breakpoint.tablet + 1}px)`,
-  xl: `(min-width: ${breakpoint.desktop + 1}px)`,
+  lg: `(min-width: ${breakpoint.desktop + 1}px)`,
 }
 
 const fontSize = {

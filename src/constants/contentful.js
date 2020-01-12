@@ -3,7 +3,7 @@ export const CONTENT_TYPES = {
   PAGE: 'page',
 }
 
-export const PAGE_SLUGS = {
+export const PAGES = {
   VECTORS: 'vectors',
   GRAPHICS: 'graphics',
 }
