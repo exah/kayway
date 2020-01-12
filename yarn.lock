@@ -883,10 +883,10 @@
   resolved "https://registry.yarnpkg.com/@exah/utils/-/utils-2.0.0.tgz#3a551bd4bb6e2f1e894357d3d945ac1867194f00"
   integrity sha512-ylzX6B8K4H8e0MTVA/VJqo+U0mMKkXyFUGPKd18OeJNnoUPa7uMJfCHVRulnqAfvQqgHeFB+RKPI/O2QbtkBEw==
 
-"@exah/webpack-universal-hot-middleware@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@exah/webpack-universal-hot-middleware/-/webpack-universal-hot-middleware-1.1.0.tgz#4d743fd0709cc8ba83245f6d4c55fa92b703136a"
-  integrity sha512-giBKQF2N7Vm0zyGFhPaRUkP17UyujdKBFgbuA+OvMD42jefqYM/DH7sNMU3EtM3KrnE82oMxbPPMF8dzIJ+qTg==
+"@exah/webpack-universal-hot-middleware@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@exah/webpack-universal-hot-middleware/-/webpack-universal-hot-middleware-1.1.1.tgz#702e87071b09ace318494b731f1f1f0d867e4444"
+  integrity sha512-N9rHivnb7abBLwPSjywDjk7MTJ8mM5Fs6szpXhC3nagMk/E9feL7E2Snvb5ammPjHtWPk4kpZR74lx0Wp6rV/Q==
   dependencies:
     express "^4.16.3"
     friendly-errors-webpack-plugin "^1.7.0"

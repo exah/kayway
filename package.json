@@ -35,7 +35,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@exah/webpack-universal-hot-middleware": "^1.1.0",
+    "@exah/webpack-universal-hot-middleware": "^1.1.1",
     "animejs": "^3.1.0",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
