@@ -54,6 +54,7 @@
     "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.3.0",
     "react-universal-data": "^3.0.0",
+    "stats-webpack-plugin": "^0.7.0",
     "ya-fetch": "^1.1.0"
   },
   "devDependencies": {
@@ -84,7 +85,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.18.2",
-    "stats-webpack-plugin": "^0.7.0",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10"
   }
