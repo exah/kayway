@@ -3,9 +3,12 @@ import { CONTENTFUL } from '../constants'
 import { createContefulAPI } from '../utils'
 
 if (config.public.spaceId == null || config.public.accessToken == null) {
-  throw new Error(
-    `Please add 'spaceId' and 'accessToken' from 'https://app.contentful.com' space settings to 'public' object exported from './config/${process.env.NODE_ENV}.js'`
-  )
+  throw new Error(`Required configuration not found!
+  - get 'SPACE_ID' and 'ACCESS_TOKEN' from 'https://app.contentful.com/spaces/{SPACE_ID}/api/keys'
+  - set them in env variables or in './config/default.js'
+  - and restart the app
+  - 🍻
+`)
 }
 
 export const api = createContefulAPI({
