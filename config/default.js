@@ -7,6 +7,8 @@ const resolvePath = (...paths) =>
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
 const siteUrl = process.env.SITE_URL || `http://${host}:${port}`
+const spaceId = process.env.SPACE_ID
+const accessToken = process.env.ACCESS_TOKEN
 
 const config = {
   host,
@@ -21,7 +23,7 @@ const config = {
     outServer: resolvePath('./out/server'),
     src: resolvePath('./src'),
   },
-  public: { siteUrl },
+  public: { siteUrl, spaceId, accessToken },
 }
 
 module.exports = Object.assign({}, universalConfig, config)
