@@ -13,3 +13,8 @@ export const getFileContentType = path('file.contentType')
 
 export const randomBetween = (min, max, base = 100) =>
   Math.floor((Math.random() * (max - min + 1) + min) * base) / base
+
+export function on(target, ...args) {
+  target.addEventListener(...args)
+  return () => target.removeEventListener(...args)
+}
