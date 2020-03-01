@@ -6,8 +6,6 @@ const nodeEnv = config.isProd ? 'production' : 'development'
 
 const alias = {
   'react-dom': '@hot-loader/react-dom',
-  // https://github.com/FormidableLabs/react-ssr-prepass#optional-dependencies
-  'styled-components': 'empty-module',
 }
 
 const javascript = (isServer) => ({

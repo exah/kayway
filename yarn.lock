@@ -2395,11 +2395,6 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
-empty-module@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/empty-module/-/empty-module-0.0.2.tgz#13b4dd8d4afeddd35e50c18dcd788c51087f1545"
-  integrity sha1-E7TdjUr+3dNeUMGNzXiMUQh/FUU=
-
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -4370,7 +4365,7 @@ object-inspect@^1.7.0:
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.7.0.tgz#f4f6bd181ad77f006b5ece60bd0b6f398ff74a67"
   integrity sha512-a7pEHdh1xKIAgTySUGgLMx/xwDZskN1Ud6egYYN3EdRW4ZMPNEDUTF+hwy2LUC+Bl+SyLXANnwz/jyh/qutKUw==
 
-object-is@^1.0.1:
+object-is@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/object-is/-/object-is-1.0.2.tgz#6b80eb84fe451498f65007982f035a5b445edec4"
   integrity sha512-Epah+btZd5wrrfjkJZq1AOB9O6OxUQto45hzFd7lXGrpHPGE0W1k+426yrZV+k6NJOzLNNW/nVsmZdIWsAqoOQ==
@@ -5014,12 +5009,12 @@ react-router@5.1.2, react-router@^5.1.2:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-ssr-prepass@^1.0.4:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.0.8.tgz#036abffe541975b20213cf7b261c05ac2843480d"
-  integrity sha512-O0gfRA1SaK+9ITKxqfnXsej2jF+OHGP/+GxD4unROQaM/0/UczGF9fuF+wTboxaQoKdIf4FvS3h/OigWh704VA==
+react-ssr-prepass@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.1.2.tgz#3a7b60798e8f8a7002cd34fad48420937d3285f7"
+  integrity sha512-z1FN7yO+a+C5Y0wDLhsseIBX3yn823cXjs5MuyKRtrSDIVNsYKUIB7++vc4uqI5eMSr8kpYjFgc1i6iJRUuJdQ==
   dependencies:
-    object-is "^1.0.1"
+    object-is "^1.0.2"
 
 react-transition-group@^4.3.0:
   version "4.3.0"
@@ -5031,13 +5026,13 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-universal-data@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-3.0.0.tgz#2662c5bbfe287fad97ffcd046c8ff25787cf1e73"
-  integrity sha512-RyxwcGm1lW4hy04/tJbhjMXVZEL5xcEOPTnNOw4jEDtJSsjO0ACwXY2n63JxUREOD4XqT6Ou5z9LuLSqd2rOmA==
+react-universal-data@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-3.0.1.tgz#b746f51ab4c02ce25701b0b7c3cf370abe0cd0e9"
+  integrity sha512-CttKZ0s5YNet7Yn7MKvj+9TaDPjtlEQ00T1/eeuHPg4+dSIN7HD5JETxH/LxF2KVAqe3wkRSSdvlZLYEGZznNw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    react-ssr-prepass "^1.0.4"
+    react-ssr-prepass "^1.1.2"
 
 react@16.12.0:
   version "16.12.0"
@@ -6352,10 +6347,10 @@ y18n@^4.0.0:
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
   integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
 
-ya-fetch@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ya-fetch/-/ya-fetch-1.1.0.tgz#d9922bf85127ddd8c1135bb426e789174042ac9e"
-  integrity sha512-ZyO8nKS/9dbz5Fui+XDx5aPgoxHMq+ntq6N6qgzupuIQrciV9dVsVOOlJeouWfthq9fdRUYKkLZU48agRuSNfg==
+ya-fetch@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ya-fetch/-/ya-fetch-1.2.0.tgz#9b00eb3e0a08f32d00ffc4bf4e26631c324bd1ec"
+  integrity sha512-4gnhAePdpZsX039WcrietrjHO6sDxh4iXJBEp9bynDs2EEjZI8P6NMbhM22YLv1IHyW+wFN5COf4lfnMqfU93A==
 
 yallist@^2.1.2:
   version "2.1.2"
