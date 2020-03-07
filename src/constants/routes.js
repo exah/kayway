@@ -1,4 +1,4 @@
 export const HOME = '/'
 export const CONTACTS = '/contacts'
 export const GRAPHICS = '/graphics'
-export const VECTORS = '/vector'
+export const COLOUR = '/colour'

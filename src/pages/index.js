@@ -21,20 +21,20 @@ function Pages(props) {
     <Page>
       <Switch>
         <Route
-          path={[ROUTES.VECTORS, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
+          path={[ROUTES.COLOUR, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
           render={(route) => (
             <ThemeDefaults
               palette={
-                route.match.path === ROUTES.VECTORS
+                route.match.path === ROUTES.COLOUR
                   ? PALETTES.VECTORS
                   : PALETTES.DEFAULT
               }
             >
               <Header>
                 <Nav>
-                  <RouteLink to={ROUTES.CONTACTS}>Контакты</RouteLink>
-                  <RouteLink to={ROUTES.GRAPHICS}>Графика</RouteLink>
-                  <RouteLink to={ROUTES.VECTORS}>Вектор</RouteLink>
+                  <RouteLink to={ROUTES.CONTACTS}>Contacts</RouteLink>
+                  <RouteLink to={ROUTES.GRAPHICS}>Graphics</RouteLink>
+                  <RouteLink to={ROUTES.COLOUR}>Colour</RouteLink>
                 </Nav>
               </Header>
               <ScrollSnap flex='1 1 auto' width='100wv'>
@@ -49,7 +49,7 @@ function Pages(props) {
                   bg='grey00'
                 />
                 <ScrollSnapRoute
-                  path={ROUTES.VECTORS}
+                  path={ROUTES.COLOUR}
                   as={VectorsPage}
                   bg='pink00'
                 />
