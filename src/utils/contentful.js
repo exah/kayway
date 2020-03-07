@@ -46,7 +46,7 @@ export function createContefulAPI({ spaceId, accessToken }) {
   const fetchEntries = (type, params) =>
     api
       .get('/entries', { params: { content_type: type, ...params } })
-      .json()
+      .then((res) => res.json())
       .then(mapLinks)
 
   const fetchEntry = (type, params) =>
