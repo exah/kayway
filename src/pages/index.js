@@ -12,11 +12,11 @@ import {
   ThemeDefaults,
 } from '../components'
 
-import VectorsPage from './vectors'
-import GraphicsPage from './graphics'
 import ContactsPage from './contacts'
+import GraphicsPage from './graphics'
+import ColourPage from './colour'
 
-function Pages(props) {
+function Pages() {
   return (
     <Page>
       <Switch>
@@ -50,7 +50,7 @@ function Pages(props) {
                 />
                 <ScrollSnapRoute
                   path={ROUTES.COLOUR}
-                  as={VectorsPage}
+                  as={ColourPage}
                   bg='pink00'
                 />
               </ScrollSnap>

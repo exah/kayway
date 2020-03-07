@@ -6,7 +6,7 @@ import { Projects } from '../components'
 import { pagePropType } from '../prop-types'
 import { withPage } from '../utils'
 
-const VectorsPage = ({ page }) =>
+const ColourPage = ({ page }) =>
   page ? (
     <>
       <Helmet>
@@ -16,12 +16,12 @@ const VectorsPage = ({ page }) =>
     </>
   ) : null
 
-VectorsPage.propTypes = {
+ColourPage.propTypes = {
   page: pagePropType,
 }
 
-VectorsPage.getInitialProps = async () => ({
+ColourPage.getInitialProps = async () => ({
   page: await fetchPage(CONTENTFUL.PAGES.VECTORS),
 })
 
-export default withPage(VectorsPage)
+export default withPage(ColourPage)
