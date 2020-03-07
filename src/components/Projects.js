@@ -11,9 +11,15 @@ export const Projects = ({
 }) => (
   <Box p={space}>
     <Feed space={space} grid={6} column={{ all: 6, sm: 3 }} {...rest}>
-      {value.map((item, index) => (
+      {value.map((item) => (
         <Feed.Item key={item.id}>
-          <AssetImage src={item.picture} bg={bg} />
+          <AssetImage
+            src={item.picture}
+            bg={bg}
+            size={1600}
+            quality={90}
+            progressive
+          />
         </Feed.Item>
       ))}
     </Feed>

@@ -72,7 +72,7 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
       style={{ display: isHiddenOnMount ? 'none' : '' }}
       {...rest}
     >
-      <FadeTransition in={isMatched}>
+      <FadeTransition in={isMatched} unmountOnExit={isHiddenOnMount}>
         <Comp />
       </FadeTransition>
     </ScrollSnapItem>
