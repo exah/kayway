@@ -32,7 +32,7 @@ export const projectPropType = PropTypes.shape({
 export const groupPropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   contentType: PropTypes.oneOf([CONTENTFUL.CONTENT_TYPES.GROUP]),
-  slug: PropTypes.oneOf(Object.values(CONTENTFUL.PAGES)),
+  slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   projects: PropTypes.arrayOf(projectPropType),
   showTitle: PropTypes.bool,
