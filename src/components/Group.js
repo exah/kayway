@@ -8,7 +8,14 @@ export const Group = ({ space, value }) => (
   <Box id={value.slug}>
     {value.showTitle && (
       <Link href={`#${value.slug}`}>
-        <Text as='h3' pt={5} mb={4} mx={space} variant='title'>
+        <Text
+          as='h3'
+          pt={5}
+          mb={4}
+          mx={space}
+          variant='title'
+          textAlign='center'
+        >
           {value.title}
         </Text>
       </Link>

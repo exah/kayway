@@ -76,7 +76,6 @@ const theme = {
       font-size: ${rem(fontSize.default)};
       line-height: ${line};
       text-transform: uppercase;
-      text-align: center;
     `,
     caption: css`
       font-size: ${rem(fontSize.caption)};
