@@ -7,6 +7,7 @@ export const Arrow = (props) => (
     width='49px'
     height='8px'
     viewBox='0 0 49 8'
+    preserveAspectRatio='xMaxYMid slice'
     fill='currentColor'
     {...props}
   >
