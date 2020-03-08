@@ -39,10 +39,20 @@ export const groupPropType = PropTypes.shape({
   columns: PropTypes.number,
 })
 
+export const textBlockPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  contentType: PropTypes.oneOf([CONTENTFUL.CONTENT_TYPES.BLOCK_TEXT]),
+  slug: PropTypes.string.isRequired,
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.string.isRequired,
+})
+
 export const pagePropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   contentType: PropTypes.oneOf([CONTENTFUL.CONTENT_TYPES.PAGE]),
   slug: PropTypes.oneOf(Object.values(CONTENTFUL.PAGES)),
   title: PropTypes.string.isRequired,
-  blocks: PropTypes.arrayOf(groupPropType),
+  blocks: PropTypes.arrayOf(
+    PropTypes.oneOfType([groupPropType, textBlockPropType])
+  ),
 })

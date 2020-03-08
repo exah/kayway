@@ -25,11 +25,11 @@ function animate({ targets, ...options }) {
 }
 
 export const Transition = ({
-  duration,
-  delay,
-  easing,
-  enter,
-  exit,
+  duration = 300,
+  delay = 0,
+  easing = 'easeInOutQuad',
+  enter = null,
+  exit = null,
   ...rest
 }) => (
   <RTG.Transition
@@ -52,24 +52,15 @@ export const Transition = ({
         ...exit,
       })
     }}
+    unmountOnExit
     {...rest}
   />
 )
 
 Transition.propTypes = {
-  duration: PropTypes.number.isRequired,
+  duration: PropTypes.number,
   delay: PropTypes.number,
   easing: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   enter: PropTypes.object,
   exit: PropTypes.object,
-  unmountOnExit: PropTypes.bool,
-}
-
-Transition.defaultProps = {
-  duration: 300,
-  delay: 0,
-  easing: 'easeInOutQuad',
-  enter: null,
-  exit: null,
-  unmountOnExit: true,
 }

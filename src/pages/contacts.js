@@ -1,7 +1,18 @@
 import React from 'react'
-import { Box } from '../components'
-import { withPage } from '../utils'
+import { fetchPage } from '../api'
+import { CONTENTFUL } from '../constants'
+import { Page } from '../components'
+import { pagePropType } from '../prop-types'
+import { withInitialProps } from '../utils'
 
-const ContactsPage = () => <Box p={1}>Contacts</Box>
+const ContactsPage = ({ page }) => <Page value={page} />
 
-export default withPage(ContactsPage)
+ContactsPage.propTypes = {
+  page: pagePropType,
+}
+
+ContactsPage.getInitialProps = async () => ({
+  page: await fetchPage(CONTENTFUL.PAGES.CONTACTS),
+})
+
+export default withInitialProps(ContactsPage)

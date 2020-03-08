@@ -4,7 +4,7 @@ import { Box, Text, Link } from 'pss-components'
 import { groupPropType } from '../prop-types'
 import { Projects } from './Projects'
 
-export const Group = ({ space = { all: 2, sm: 3, md: 4, lg: 5 }, value }) => (
+export const Group = ({ space, value }) => (
   <Box id={value.slug}>
     {value.showTitle && (
       <Link href={`#${value.slug}`}>

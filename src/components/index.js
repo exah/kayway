@@ -1,5 +1,6 @@
 export * from 'pss-components'
 
+export * from './App'
 export * from './AssetImage'
 export * from './Blocks'
 export * from './FadeTransition'

@@ -7,7 +7,7 @@ const gap = 16
 const base = 16
 const line = 1.1875
 
-const rem = (num) => num / base + 'rem'
+const rem = (input) => (/rem$/.test(input) ? input : input / base + 'rem')
 
 const breakpoint = {
   mobile: 375,
@@ -69,22 +69,27 @@ const theme = {
       line-height: 1.1;
     `,
     default: css`
-      font-size: 1rem;
+      font-size: ${rem(fontSize.default)};
       line-height: ${line};
     `,
     title: css`
-      font-size: 1rem;
+      font-size: ${rem(fontSize.default)};
       line-height: ${line};
       text-transform: uppercase;
       text-align: center;
     `,
     caption: css`
       font-size: ${rem(fontSize.caption)};
+      font-weight: 300;
       line-height: ${line};
     `,
   },
   Link: css`
     text-decoration: none;
+
+    &[href*=':'] {
+      text-decoration: underline;
+    }
   `,
 }
 

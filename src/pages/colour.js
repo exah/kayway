@@ -1,20 +1,11 @@
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
 import { fetchPage } from '../api'
 import { CONTENTFUL } from '../constants'
-import { Blocks } from '../components'
+import { Page } from '../components'
 import { pagePropType } from '../prop-types'
-import { withPage } from '../utils'
+import { withInitialProps } from '../utils'
 
-const ColourPage = ({ page }) =>
-  page ? (
-    <>
-      <Helmet>
-        <title>{page.title}</title>
-      </Helmet>
-      <Blocks value={page.blocks} />
-    </>
-  ) : null
+const ColourPage = ({ page }) => <Page value={page} />
 
 ColourPage.propTypes = {
   page: pagePropType,
@@ -24,4 +15,4 @@ ColourPage.getInitialProps = async () => ({
   page: await fetchPage(CONTENTFUL.PAGES.COLOUR),
 })
 
-export default withPage(ColourPage)
+export default withInitialProps(ColourPage)

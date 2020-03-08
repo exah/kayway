@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader/root'
 import { Switch, Route, Redirect } from 'react-router'
 import { ROUTES, PALETTES } from '../constants'
 import {
-  Page,
+  App,
   Header,
   Nav,
   ScrollSnap,
@@ -18,7 +18,7 @@ import ColourPage from './colour'
 
 function Pages() {
   return (
-    <Page>
+    <App>
       <Switch>
         <Route
           path={[ROUTES.COLOUR, ROUTES.GRAPHICS, ROUTES.CONTACTS]}
@@ -60,7 +60,7 @@ function Pages() {
         />
         <Redirect to={ROUTES.GRAPHICS} />
       </Switch>
-    </Page>
+    </App>
   )
 }
 

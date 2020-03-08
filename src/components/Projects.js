@@ -3,13 +3,7 @@ import PropTypes from 'prop-types'
 import { projectPropType } from '../prop-types'
 import { Box, Feed, AssetImage } from '../components'
 
-export const Projects = ({
-  value,
-  grid = 6,
-  columns = 2,
-  space = { all: 2, sm: 3, md: 4, lg: 5 },
-  ...rest
-}) => (
+export const Projects = ({ value, grid = 6, columns = 2, space, ...rest }) => (
   <Box m={space}>
     <Feed
       space={space}
