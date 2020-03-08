@@ -18,6 +18,7 @@ export const Template = ({ head, files, config, data, lang, children }) => (
           __html: `window._ssr = ${JSON.stringify({ data, config, lang })};`,
         }}
       />
+      <script async defer src='https://cdn.coollabs.io/save.js' />
       <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
       {files.js.map((src) => (
         <script key={src} src={src} async />

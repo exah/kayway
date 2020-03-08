@@ -9,5 +9,5 @@ module.exports = {
   isDev,
   isProd,
   public: isClient ? (window._ssr || {}).config || {} : {},
-  languages: ['ru', 'en'],
+  languages: ['en'],
 }
