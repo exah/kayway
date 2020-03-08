@@ -9,7 +9,13 @@ const H1 = (props) => <H as='h1' mb={4} {...props} />
 const H2 = (props) => <H as='h2' mb={3} {...props} />
 const H3 = (props) => <H as='h3' mb={2} {...props} />
 const H4 = (props) => (
-  <H as='h4' mt={{ [`${Text} + &`]: 5 }} mb={1} variant='caption' {...props} />
+  <H
+    as='h4'
+    mt={{ [`${Text} + &`]: { all: 4, md: 5 } }}
+    mb={1}
+    variant='caption'
+    {...props}
+  />
 )
 const H5 = (props) => <H as='h5' mb={1} {...props} />
 const H6 = (props) => <H as='h6' mb={1} {...props} />

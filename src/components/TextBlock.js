@@ -11,8 +11,8 @@ export const TextBlock = ({ space, value }) => (
     </Box>
     <Box
       flex='1 1 auto'
-      mr={{ ...space, all: 0 }}
-      mt={{ ...space, md: 0, lg: 0 }}
+      mt={{ all: 2, md: 0 }}
+      mr={{ ...space, all: 0, sm: 0 }}
       minWidth={0}
     >
       <Markdown value={value.secondary} />
