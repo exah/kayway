@@ -6,7 +6,7 @@ import { Markdown } from './Markdown'
 
 export const TextBlock = ({ space, value }) => (
   <Flex m={space} flexDirection={{ all: 'column', md: 'row-reverse' }}>
-    <Box flex='1 0 auto' width={{ all: 1, md: 0.5, lg: 0.63 }}>
+    <Box flex='0 0 auto' width={{ all: 1, md: 0.5, lg: 0.635 }}>
       <Markdown value={value.primary} />
     </Box>
     <Box
