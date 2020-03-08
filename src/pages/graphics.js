@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { fetchPage } from '../api'
 import { CONTENTFUL } from '../constants'
-import { Projects } from '../components'
+import { Blocks } from '../components'
 import { pagePropType } from '../prop-types'
 import { withPage } from '../utils'
 
@@ -12,7 +12,7 @@ const GraphicsPage = ({ page }) =>
       <Helmet>
         <title>{page.title}</title>
       </Helmet>
-      <Projects value={page.projects} bg='white' />
+      <Blocks value={page.blocks} />
     </>
   ) : null
 

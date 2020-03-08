@@ -20,4 +20,7 @@ export const fetchProjects = () =>
   api.fetchEntries(CONTENTFUL.CONTENT_TYPES.PROJECT)
 
 export const fetchPage = (slug) =>
-  api.fetchEntry(CONTENTFUL.CONTENT_TYPES.PAGE, { 'fields.slug': slug })
+  api.fetchEntry(CONTENTFUL.CONTENT_TYPES.PAGE, {
+    include: 2,
+    'fields.slug': slug,
+  })

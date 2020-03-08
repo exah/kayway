@@ -72,6 +72,12 @@ const theme = {
       font-size: 1rem;
       line-height: ${line};
     `,
+    title: css`
+      font-size: 1rem;
+      line-height: ${line};
+      text-transform: uppercase;
+      text-align: center;
+    `,
     caption: css`
       font-size: ${rem(fontSize.caption)};
       line-height: ${line};

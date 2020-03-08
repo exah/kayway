@@ -1,8 +1,10 @@
 export * from 'pss-components'
 
 export * from './AssetImage'
+export * from './Blocks'
 export * from './FadeTransition'
 export * from './GlobalStyles'
+export * from './Group'
 export * from './Header'
 export * from './Logo'
 export * from './Nav'

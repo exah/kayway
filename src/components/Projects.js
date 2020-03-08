@@ -5,17 +5,23 @@ import { Box, Feed, AssetImage } from '../components'
 
 export const Projects = ({
   value,
+  grid = 6,
+  columns = 2,
   space = { all: 2, sm: 3, md: 4, lg: 5 },
-  bg,
   ...rest
 }) => (
-  <Box p={space}>
-    <Feed space={space} grid={6} column={{ all: 6, sm: 3 }} {...rest}>
+  <Box m={space}>
+    <Feed
+      space={space}
+      grid={grid}
+      column={{ all: grid, sm: grid / columns }}
+      {...rest}
+    >
       {value.map((item) => (
         <Feed.Item key={item.id}>
           <AssetImage
             src={item.picture}
-            bg={bg}
+            bg='white'
             size={1600}
             quality={90}
             progressive
@@ -28,6 +34,8 @@ export const Projects = ({
 
 Projects.propTypes = {
   bg: PropTypes.string,
+  grid: PropTypes.number,
+  columns: PropTypes.number,
   space: PropTypes.objectOf(PropTypes.number),
   value: PropTypes.arrayOf(projectPropType).isRequired,
 }

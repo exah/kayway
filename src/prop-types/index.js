@@ -29,10 +29,20 @@ export const projectPropType = PropTypes.shape({
   caption: PropTypes.string,
 })
 
+export const groupPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  contentType: PropTypes.oneOf([CONTENTFUL.CONTENT_TYPES.GROUP]),
+  slug: PropTypes.oneOf(Object.values(CONTENTFUL.PAGES)),
+  title: PropTypes.string.isRequired,
+  projects: PropTypes.arrayOf(projectPropType),
+  showTitle: PropTypes.bool,
+  columns: PropTypes.number,
+})
+
 export const pagePropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   contentType: PropTypes.oneOf([CONTENTFUL.CONTENT_TYPES.PAGE]),
   slug: PropTypes.oneOf(Object.values(CONTENTFUL.PAGES)),
   title: PropTypes.string.isRequired,
-  projects: PropTypes.arrayOf(projectPropType),
+  blocks: PropTypes.arrayOf(groupPropType),
 })
