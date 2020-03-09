@@ -19,7 +19,7 @@ export const Template = ({ head, files, config, data, lang, children }) => (
         }}
       />
       <script async defer src='https://cdn.coollabs.io/save.js' />
-      <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
+      <script src='https://cdn.polyfill.io/v3/polyfill.min.js' />
       {files.js.map((src) => (
         <script key={src} src={src} async />
       ))}
