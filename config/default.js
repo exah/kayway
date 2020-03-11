@@ -22,6 +22,8 @@ const config = {
     outClient: resolvePath('./out/client'),
     outServer: resolvePath('./out/server'),
     src: resolvePath('./src'),
+    srcClient: resolvePath('./src/client'),
+    srcServer: resolvePath('./src/server'),
   },
   public: { siteUrl, spaceId, accessToken },
 }

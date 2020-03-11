@@ -3,10 +3,7 @@ const config = require('config')
 const StatsPlugin = require('stats-webpack-plugin')
 
 const nodeEnv = config.isProd ? 'production' : 'development'
-
-const alias = {
-  'react-dom': '@hot-loader/react-dom',
-}
+const alias = config.isProd ? {} : { 'react-dom': '@hot-loader/react-dom' }
 
 const javascript = (isServer) => ({
   test: /\.js$/,
@@ -31,7 +28,7 @@ const clientConfig = {
   target: 'web',
   mode: nodeEnv,
   entry: {
-    main: ['react-hot-loader/patch', './src/client'],
+    main: ['react-hot-loader/patch', config.paths.srcClient],
   },
   output: {
     path: config.paths.outClient,
@@ -70,7 +67,7 @@ const serverConfig = {
   target: 'node',
   mode: config.isProd ? 'none' : 'development',
   entry: {
-    server: './src/server',
+    server: config.paths.srcServer,
   },
   output: {
     path: config.paths.outServer,
