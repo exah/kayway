@@ -14,7 +14,7 @@ export function AssetImage({ src, progressive, quality, size, ...rest }) {
 
   return (
     <Box ratio={ratio} {...rest}>
-      <Image src={link} width='100%' />
+      <Image src={link} width='100%' loading='lazy' />
     </Box>
   )
 }
