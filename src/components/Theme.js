@@ -72,6 +72,10 @@ const theme = {
       font-size: ${rem(fontSize.default)};
       line-height: ${line};
     `,
+    nav: css`
+      font-size: ${rem(fontSize.default)};
+      line-height: 1;
+    `,
     title: css`
       font-size: ${rem(fontSize.default)};
       line-height: ${line};
@@ -83,6 +87,22 @@ const theme = {
       line-height: ${line};
     `,
   },
+  buttonStyle: {
+    default: css`
+      color: ${color.white};
+      background-color: ${color.pink10};
+    `,
+    floating: css`
+      color: ${color.white};
+      background-color: ${color.pink10};
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    `,
+  },
+  Button: css`
+    padding: 10px;
+    border-radius: 9999px;
+    text-align: center;
+  `,
   Link: css`
     text-decoration: none;
 

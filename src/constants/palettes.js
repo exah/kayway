@@ -1,2 +1,2 @@
 export const DEFAULT = 'default'
-export const VECTORS = 'vector'
+export const COLOUR = 'colour'

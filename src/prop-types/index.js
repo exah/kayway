@@ -55,4 +55,6 @@ export const pagePropType = PropTypes.shape({
   blocks: PropTypes.arrayOf(
     PropTypes.oneOfType([groupPropType, textBlockPropType])
   ),
+  jumpGroup: groupPropType,
+  jumpLabel: PropTypes.string,
 })

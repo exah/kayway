@@ -37,7 +37,7 @@ function Pages() {
               <ThemeDefaults
                 palette={
                   route.match.path === ROUTES.COLOUR
-                    ? PALETTES.VECTORS
+                    ? PALETTES.COLOUR
                     : PALETTES.DEFAULT
                 }
               >
@@ -53,9 +53,15 @@ function Pages() {
                 </Helmet>
                 <Header>
                   <Nav>
-                    <RouteLink to={ROUTES.CONTACTS}>Contacts</RouteLink>
-                    <RouteLink to={ROUTES.GRAPHICS}>Graphics</RouteLink>
-                    <RouteLink to={ROUTES.COLOUR}>Colour</RouteLink>
+                    <RouteLink variant='nav' to={ROUTES.CONTACTS}>
+                      Contacts
+                    </RouteLink>
+                    <RouteLink variant='nav' to={ROUTES.GRAPHICS}>
+                      Graphics
+                    </RouteLink>
+                    <RouteLink variant='nav' to={ROUTES.COLOUR}>
+                      Colour
+                    </RouteLink>
                   </Nav>
                 </Header>
                 <ScrollSnap flex='1 1 auto' width='100wv'>

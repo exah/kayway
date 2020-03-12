@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useRouteMatch, useHistory } from 'react-router'
-import { on } from '../utils'
+import { listen } from '../utils'
 import { ScrollSnapItem } from './ScrollSnap'
 import { FadeTransition } from './FadeTransition'
 
@@ -34,7 +34,7 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
       }
     }
 
-    return on(parent, 'scroll', handleScroll, { passive: true })
+    return listen(parent, 'scroll', handleScroll, { passive: true })
   }, [elementRef, history, isMatched])
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
         }
       }
 
-      return on(window, 'resize', () => scrollIntoView(), { passive: true })
+      return listen(window, 'resize', () => scrollIntoView(), { passive: true })
     }
   }, [elementRef, prevMatchedRef, isMatched])
 

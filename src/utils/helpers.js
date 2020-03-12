@@ -24,7 +24,7 @@ export const getOptimizedFileUrl = (input, options) => {
 export const randomBetween = (min, max, base = 100) =>
   Math.floor((Math.random() * (max - min + 1) + min) * base) / base
 
-export function on(target, ...args) {
+export function listen(target, ...args) {
   target.addEventListener(...args)
   return () => target.removeEventListener(...args)
 }
