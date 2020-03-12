@@ -6,15 +6,29 @@ import { getRatio, getOptimizedFileUrl } from '../utils'
 
 export function AssetImage({ src, progressive, quality, size, ...rest }) {
   const ratio = getRatio(src)
-  const link = getOptimizedFileUrl(src, {
-    fl: progressive ? 'progressive' : null,
+  const filter = progressive ? 'progressive' : null
+  const side = ratio < 1 ? 'h' : 'w'
+
+  const linkOriginal = getOptimizedFileUrl(src, {
+    fl: filter,
     q: quality,
-    [ratio < 1 ? 'h' : 'w']: size,
+    [side]: size,
+  })
+
+  const linkRetina = getOptimizedFileUrl(src, {
+    fl: filter,
+    q: quality,
+    [side]: size * 2,
   })
 
   return (
     <Box ratio={ratio} {...rest}>
-      <Image src={link} width='100%' loading='lazy' />
+      <Image
+        src={linkOriginal}
+        srcSet={`${linkRetina} 2x`}
+        width='100%'
+        loading='lazy'
+      />
     </Box>
   )
 }

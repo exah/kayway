@@ -16,8 +16,8 @@ export const Projects = ({ value, grid = 6, columns = 2, space, ...rest }) => (
           <AssetImage
             src={item.picture}
             bg='white'
-            size={1600}
-            quality={90}
+            size={550}
+            quality={85}
             progressive
           />
         </Feed.Item>
