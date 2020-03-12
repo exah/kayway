@@ -16,7 +16,7 @@ export const Projects = ({ value, grid = 6, columns = 2, space, ...rest }) => (
           <AssetImage
             src={item.picture}
             bg='white'
-            size={550}
+            size={Math.round(1100 / columns)}
             quality={85}
             progressive
           />
