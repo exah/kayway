@@ -1,32 +1,46 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet-async'
-import { pagePropType } from '../prop-types'
+import { useRUD } from 'react-universal-data'
+import { Box } from 'pss-components'
+import { fetchPage } from '../api'
+import { CONTENTFUL } from '../constants'
 import { Blocks } from './Blocks'
 import { Container } from './Container'
+import { FadeTransition } from './FadeTransition'
 import { JumpButton } from './JumpButton'
 
-export const Page = ({ value }) =>
-  value ? (
-    <>
-      <Helmet>
-        <title>{value.title}</title>
-      </Helmet>
-      <Container>
-        <Blocks value={value.blocks} />
-        {Boolean(value.jumpGroup && value.jumpLabel) && (
-          <JumpButton
-            to={`#${value.jumpGroup.slug}`}
-            scrollOffset={200}
-            maxWidth={196}
-            mb={3}
-          >
-            {value.jumpLabel}
-          </JumpButton>
-        )}
-      </Container>
-    </>
-  ) : null
+export function Page({ slug }) {
+  const { isReady, result: page } = useRUD(fetchPage, slug)
+
+  return (
+    <FadeTransition in={isReady}>
+      <Box>
+        {isReady ? (
+          <>
+            <Helmet>
+              <title>{page.title}</title>
+            </Helmet>
+            <Container>
+              <Blocks value={page.blocks} />
+              {Boolean(page.jumpGroup && page.jumpLabel) && (
+                <JumpButton
+                  to={`#${page.jumpGroup.slug}`}
+                  scrollOffset={200}
+                  maxWidth={196}
+                  mb={3}
+                >
+                  {page.jumpLabel}
+                </JumpButton>
+              )}
+            </Container>
+          </>
+        ) : null}
+      </Box>
+    </FadeTransition>
+  )
+}
 
 Page.propTypes = {
-  value: pagePropType,
+  slug: PropTypes.oneOf(Object.values(CONTENTFUL.PAGES)),
 }

@@ -824,7 +824,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
   integrity sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
@@ -5049,12 +5049,11 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-universal-data@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-3.0.1.tgz#b746f51ab4c02ce25701b0b7c3cf370abe0cd0e9"
-  integrity sha512-CttKZ0s5YNet7Yn7MKvj+9TaDPjtlEQ00T1/eeuHPg4+dSIN7HD5JETxH/LxF2KVAqe3wkRSSdvlZLYEGZznNw==
+react-universal-data@^4.0.0-4:
+  version "4.0.0-4"
+  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-4.0.0-4.tgz#b35892d786fd89639816fcdc062ec7aea20f1e9d"
+  integrity sha512-UmhQzEJdGl4Qi7c6MT+HE6h/TKHMhez2MuCBbrQoc+tp2VBTztMTKx173KTKoLykKp571rKeNBhPAdTADyZCeg==
   dependencies:
-    "@babel/runtime" "^7.0.0"
     react-ssr-prepass "^1.1.2"
 
 react@16.13.0:

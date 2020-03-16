@@ -3,20 +3,17 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Switch, Route, Redirect } from 'react-router'
 import { Helmet } from 'react-helmet-async'
-import { ROUTES, PALETTES } from '../constants'
+import { CONTENTFUL, ROUTES, PALETTES } from '../constants'
 import {
   App,
   Header,
   Nav,
   ScrollSnap,
   ScrollSnapRoute,
+  Page,
   RouteLink,
   ThemeDefaults,
 } from '../components'
-
-import ContactsPage from './contacts'
-import GraphicsPage from './graphics'
-import ColourPage from './colour'
 
 function Pages() {
   return (
@@ -65,21 +62,15 @@ function Pages() {
                   </Nav>
                 </Header>
                 <ScrollSnap flex='1 1 auto' width='100wv'>
-                  <ScrollSnapRoute
-                    path={ROUTES.CONTACTS}
-                    as={ContactsPage}
-                    bg='white'
-                  />
-                  <ScrollSnapRoute
-                    path={ROUTES.GRAPHICS}
-                    as={GraphicsPage}
-                    bg='grey00'
-                  />
-                  <ScrollSnapRoute
-                    path={ROUTES.COLOUR}
-                    as={ColourPage}
-                    bg='pink00'
-                  />
+                  <ScrollSnapRoute path={ROUTES.CONTACTS} bg='white'>
+                    <Page slug={CONTENTFUL.PAGES.CONTACTS} />
+                  </ScrollSnapRoute>
+                  <ScrollSnapRoute path={ROUTES.GRAPHICS} bg='grey00'>
+                    <Page slug={CONTENTFUL.PAGES.GRAPHICS} />
+                  </ScrollSnapRoute>
+                  <ScrollSnapRoute path={ROUTES.COLOUR} bg='pink00'>
+                    <Page slug={CONTENTFUL.PAGES.COLOUR} />
+                  </ScrollSnapRoute>
                 </ScrollSnap>
               </ThemeDefaults>
             )

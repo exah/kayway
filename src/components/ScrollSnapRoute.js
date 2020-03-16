@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useRouteMatch, useHistory } from 'react-router'
+import { Box } from 'pss-components'
 import { listen } from '../utils'
-import { ScrollSnapItem } from './ScrollSnap'
 import { FadeTransition } from './FadeTransition'
+import { ScrollSnapItem } from './ScrollSnap'
 
-export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
+export function ScrollSnapRoute({ path, children, ...rest }) {
   const elementRef = useRef()
   const prevMatchedRef = useRef()
   const history = useHistory()
@@ -73,7 +74,7 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
       {...rest}
     >
       <FadeTransition in={isMatched}>
-        <Comp />
+        <Box>{children}</Box>
       </FadeTransition>
     </ScrollSnapItem>
   )
@@ -81,5 +82,4 @@ export function ScrollSnapRoute({ path, as: Comp, ...rest }) {
 
 ScrollSnapRoute.propTypes = {
   path: PropTypes.string,
-  as: PropTypes.elementType,
 }
