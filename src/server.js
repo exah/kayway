@@ -1,5 +1,6 @@
 import config from 'config'
 import React from 'react'
+import { isResponseError } from 'ya-fetch'
 import { HelmetProvider } from 'react-helmet-async'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
@@ -47,7 +48,11 @@ function serverRender(stats) {
       console.log('Render failed')
       console.error(error)
 
-      res.status(error.status || context.status || 500)
+      const status = isResponseError(error)
+        ? error.response.status
+        : context.status || 500
+
+      res.status(status)
       next(error)
     }
   }

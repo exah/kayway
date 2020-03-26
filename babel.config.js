@@ -6,8 +6,7 @@ module.exports = {
     '@babel/preset-react',
   ],
   plugins: [
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-optional-chaining',
+    ['@babel/plugin-proposal-optional-chaining', { loose: true }],
     ['@babel/plugin-transform-runtime', { useESModules: true }],
     ['emotion', { sourceMap: config.isDev, autoLabel: config.isDev }],
   ],

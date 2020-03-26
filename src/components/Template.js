@@ -39,7 +39,7 @@ Template.propTypes = {
     js: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   config: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
   lang: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }

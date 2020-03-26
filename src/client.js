@@ -2,16 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import { DataProvider, createDataStore } from 'react-universal-data'
+import { hydrateData as hydrateInitialData } from 'react-universal-data'
 import Pages from './pages'
 
+hydrateInitialData(window._ssr.data)
+
 ReactDOM.hydrate(
-  <DataProvider value={createDataStore(window._ssr.data)}>
-    <HelmetProvider>
-      <BrowserRouter>
-        <Pages />
-      </BrowserRouter>
-    </HelmetProvider>
-  </DataProvider>,
+  <HelmetProvider>
+    <BrowserRouter>
+      <Pages />
+    </BrowserRouter>
+  </HelmetProvider>,
   document.getElementById('app')
 )

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet-async'
-import { useRUD } from 'react-universal-data'
+import { useFetchData } from 'react-universal-data'
 import { Box } from 'pss-components'
 import { fetchPage } from '../api'
 import { CONTENTFUL } from '../constants'
@@ -11,7 +11,7 @@ import { FadeTransition } from './FadeTransition'
 import { JumpButton } from './JumpButton'
 
 export function Page({ slug }) {
-  const { isReady, result: page } = useRUD(fetchPage, slug)
+  const { isReady, result: page } = useFetchData(fetchPage, slug)
 
   return (
     <FadeTransition in={isReady}>
