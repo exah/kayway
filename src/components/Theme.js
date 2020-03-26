@@ -106,7 +106,7 @@ const theme = {
   Link: css`
     text-decoration: none;
 
-    &[href*=':'] {
+    p & {
       text-decoration: underline;
     }
   `,

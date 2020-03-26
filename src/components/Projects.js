@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Box, Feed } from 'pss-components'
 import { projectPropType } from '../prop-types'
-import { Box, Feed, AssetImage } from '../components'
+import { AssetImage } from './AssetImage'
+import { Caption } from './Caption'
 
 export const Projects = ({ value, grid = 6, columns = 2, space, ...rest }) => (
   <Box m={space}>
@@ -20,6 +22,7 @@ export const Projects = ({ value, grid = 6, columns = 2, space, ...rest }) => (
             quality={85}
             progressive
           />
+          <Caption value={item} />
         </Feed.Item>
       ))}
     </Feed>
