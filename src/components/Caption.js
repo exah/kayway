@@ -4,7 +4,7 @@ import { projectPropType } from '../prop-types'
 import { Arrow } from './Arrow'
 
 export function Caption({ value }) {
-  if (!value) return null
+  if (!value.caption) return null
 
   return (
     <Link href={value.url} target='_blank'>
