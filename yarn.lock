@@ -5029,10 +5029,10 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-universal-data@^4.0.0-6:
-  version "4.0.0-6"
-  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-4.0.0-6.tgz#1258ea86202aabb071893e3435f4a8553ad5498e"
-  integrity sha512-gbUhc8Q1rA6WwUPM3xNYuKI1ngJtP6m7PuVb79Z/t3oTXgIVCxLvTwH+npHacIzmbwxFK1WZjuP8bTezz2Gtjw==
+react-universal-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-universal-data/-/react-universal-data-4.0.0.tgz#cba10a35d3a2ae651505b1d2a3cf82dd4462fd18"
+  integrity sha512-zpjhrCW2+t6pqfxJ4wiGcsYSxuFryfI2MmD9DGJF6VP+Ot9nQxIxzHbjDELtfnWq17Rktis1fqwYQdC+QfSBdQ==
   dependencies:
     react-ssr-prepass "^1.1.2"
 

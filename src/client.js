@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import { hydrateData as hydrateInitialData } from 'react-universal-data'
+import { hydrateInitialData } from 'react-universal-data'
 import Pages from './pages'
 
 hydrateInitialData(window._ssr.data)
