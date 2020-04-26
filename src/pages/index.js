@@ -53,11 +53,11 @@ function Pages() {
                     <RouteLink variant='nav' to={ROUTES.CONTACTS}>
                       Contacts
                     </RouteLink>
-                    <RouteLink variant='nav' to={ROUTES.GRAPHICS}>
-                      Graphics
-                    </RouteLink>
                     <RouteLink variant='nav' to={ROUTES.COLOUR}>
                       Colour
+                    </RouteLink>
+                    <RouteLink variant='nav' to={ROUTES.GRAPHICS}>
+                      Graphics
                     </RouteLink>
                   </Nav>
                 </Header>
@@ -65,11 +65,11 @@ function Pages() {
                   <ScrollSnapRoute path={ROUTES.CONTACTS} bg='white'>
                     <Page slug={CONTENTFUL.PAGES.CONTACTS} />
                   </ScrollSnapRoute>
-                  <ScrollSnapRoute path={ROUTES.GRAPHICS} bg='grey00'>
-                    <Page slug={CONTENTFUL.PAGES.GRAPHICS} />
-                  </ScrollSnapRoute>
                   <ScrollSnapRoute path={ROUTES.COLOUR} bg='pink00'>
                     <Page slug={CONTENTFUL.PAGES.COLOUR} />
+                  </ScrollSnapRoute>
+                  <ScrollSnapRoute path={ROUTES.GRAPHICS} bg='grey00'>
+                    <Page slug={CONTENTFUL.PAGES.GRAPHICS} />
                   </ScrollSnapRoute>
                 </ScrollSnap>
               </ThemeDefaults>
@@ -77,7 +77,7 @@ function Pages() {
           }}
           exact
         />
-        <Redirect to={ROUTES.GRAPHICS} />
+        <Redirect to={ROUTES.COLOUR} />
       </Switch>
     </App>
   )
