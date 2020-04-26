@@ -17,7 +17,7 @@ const animationDoneListener = (node, done) =>
 function animate({ targets, ...options }) {
   anime({
     targets,
-    complete: (instance) => {
+    complete: () => {
       triggerAnimationDone(targets)
     },
     ...options,
@@ -25,7 +25,7 @@ function animate({ targets, ...options }) {
 }
 
 export const Transition = ({
-  duration = 300,
+  duration = 400,
   delay = 0,
   easing = 'easeInOutQuad',
   enter = null,

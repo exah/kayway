@@ -47,8 +47,7 @@ export function ScrollSnapRoute({ path, children, ...rest }) {
     prevMatchedRef.current = isMatched
 
     if (isMatched) {
-      const scrollIntoView = (options) =>
-        parent.scroll({ left: element.offsetLeft, ...options })
+      const scrollIntoView = () => parent.scroll({ left: element.offsetLeft })
 
       switch (prevMatched) {
         // on mount
@@ -58,12 +57,12 @@ export function ScrollSnapRoute({ path, children, ...rest }) {
         }
         // on update
         case false: {
-          scrollIntoView({ behavior: 'smooth' })
+          scrollIntoView()
           break
         }
       }
 
-      return listen(window, 'resize', () => scrollIntoView(), { passive: true })
+      return listen(window, 'resize', scrollIntoView, { passive: true })
     }
   }, [elementRef, prevMatchedRef, isMatched])
 
