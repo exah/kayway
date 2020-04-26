@@ -7,7 +7,6 @@ import { CONTENTFUL, ROUTES, PALETTES } from '../constants'
 import {
   App,
   Header,
-  Nav,
   ScrollSnap,
   ScrollSnapRoute,
   Page,
@@ -49,7 +48,8 @@ function Pages() {
                   <meta property='og:url' content={meta.canonical} />
                 </Helmet>
                 <Header>
-                  <Nav>
+                  <Header.Logo to={ROUTES.COLOUR} />
+                  <Header.Nav>
                     <RouteLink variant='nav' to={ROUTES.CONTACTS}>
                       Contacts
                     </RouteLink>
@@ -59,7 +59,7 @@ function Pages() {
                     <RouteLink variant='nav' to={ROUTES.GRAPHICS}>
                       Graphics
                     </RouteLink>
-                  </Nav>
+                  </Header.Nav>
                 </Header>
                 <ScrollSnap flex='1 1 auto' width='100wv'>
                   <ScrollSnapRoute path={ROUTES.CONTACTS} bg='white'>
