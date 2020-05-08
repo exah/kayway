@@ -10,8 +10,10 @@ import { Container } from './Container'
 import { FadeTransition } from './FadeTransition'
 import { JumpButton } from './JumpButton'
 
+const TTL = 1000 * 60 * (typeof window === 'undefined' ? 1 : 10)
+
 export function Page({ slug }) {
-  const { isReady, result: page } = useFetchData(fetchPage, slug)
+  const { isReady, result: page } = useFetchData(fetchPage, slug, TTL)
 
   return (
     <FadeTransition in={isReady}>
