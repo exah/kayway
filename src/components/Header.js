@@ -14,7 +14,7 @@ export const Header = ({ children, ...rest }) => (
 export const HeaderLogo = (props) => (
   <Flex>
     <RouteLink mx='auto' pt={2} {...props}>
-      <Logo mr='-20px' />
+      <Logo />
     </RouteLink>
   </Flex>
 )
