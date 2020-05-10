@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Flex, Box } from 'pss-components'
-import { useStrictRouteMatch } from '../hooks'
+import { useRouteMatch } from 'react-router-dom'
 import { Arrow } from './Arrow'
 
 const DIRECTIONS = { LEFT: Symbol('👈'), RIGHT: Symbol('👉') }
 const TRANSFORMS = { [DIRECTIONS.LEFT]: 'rotate(180deg)' }
 const TRANSITION = 'opacity 0.3s'
 
-function NavItem({ path, prevPath, nextPath, children, ...rest }) {
-  const match = useStrictRouteMatch(path)
-  const prevMatch = useStrictRouteMatch(prevPath)
-  const nextMatch = useStrictRouteMatch(nextPath)
+function NavItem({ path, prevPath, nextPath, children }) {
+  const match = useRouteMatch({ path: path, strict: true })
+  const prevMatch = useRouteMatch({ path: prevPath, strict: true })
+  const nextMatch = useRouteMatch({ path: nextPath, strict: true })
 
   let direction = null
   if (prevPath == null) {

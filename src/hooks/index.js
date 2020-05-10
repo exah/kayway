@@ -1,1 +1,0 @@
-export { useStrictRouteMatch } from './useStrictRouteMatch'
