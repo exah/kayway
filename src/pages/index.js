@@ -39,6 +39,7 @@ function Pages() {
               >
                 <Helmet titleTemplate={`%s — ${meta.title}`}>
                   <link rel='icon' sizes='192x192' href={meta.icon} />
+                  <meta property='description' content={meta.description} />
                   <meta property='og:site_name' content={meta.title} />
                   <meta property='og:title' content={meta.title} />
                   <meta property='og:description' content={meta.description} />
