@@ -10,22 +10,21 @@
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/) 10.x
-- [Yarn](https://yarnpkg.com/en/docs/install) package manager
+- [Node.js](https://nodejs.org/en/) 16.x
 
 ## Quick Start
 
 ```sh
-$ yarn
-$ yarn run dev
+$ npm i
+$ npm run dev
 $ open http://0.0.0.0:3000
 ```
 
 ## Build
 
 ```sh
-$ yarn run build
-$ yarn start
+$ npm run build
+$ npm start
 $ open http://0.0.0.0:3000
 ```
 
