@@ -1,5 +1,5 @@
 # Base
-FROM node:12.14.1-alpine3.9 AS base
+FROM node:16-alpine3.15 AS base
 
 ENV APP_DIR /app/
 ENV NPM_CONFIG_PRODUCTION false
@@ -7,13 +7,13 @@ ENV NODE_ENV production
 
 WORKDIR $APP_DIR
 
-ADD package.json yarn.lock $APP_DIR
-RUN yarn --prod --frozen-lockfile
+ADD package.json package-lock.json $APP_DIR
+RUN npm install --production
 
 # Build
 FROM base AS build
 
-RUN yarn --frozen-lockfile
+RUN npm install
 ADD . $APP_DIR
 RUN npm run build
 
