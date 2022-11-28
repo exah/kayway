@@ -15,7 +15,6 @@ const javascript = (isServer) => ({
       isServer
         ? 'babel-plugin-dynamic-import-node'
         : '@babel/plugin-syntax-dynamic-import',
-      'react-hot-loader/babel',
     ],
   },
 })
@@ -28,7 +27,7 @@ const clientConfig = {
   target: 'web',
   mode: nodeEnv,
   entry: {
-    main: ['react-hot-loader/patch', config.paths.srcClient],
+    main: config.paths.srcClient,
   },
   output: {
     path: config.paths.outClient,

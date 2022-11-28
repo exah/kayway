@@ -1,6 +1,5 @@
 import config from 'config'
 import React from 'react'
-import { hot } from 'react-hot-loader/root'
 import { Switch, Route, Redirect } from 'react-router'
 import { Helmet } from 'react-helmet-async'
 import { CONTENTFUL, ROUTES, PALETTES } from '../constants'
@@ -84,4 +83,4 @@ function Pages() {
   )
 }
 
-export default hot(Pages)
+export default Pages
