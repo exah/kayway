@@ -41,6 +41,7 @@
     "compression": "^1.7.4",
     "config": "^3.3.0",
     "cross-env": "^7.0.2",
+    "debug": "^4.3.4",
     "express-request-language": "^1.1.15",
     "isomorphic-unfetch": "^3.0.0",
     "markdown-to-jsx": "^6.11.0",
